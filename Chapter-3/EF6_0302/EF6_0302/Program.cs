@@ -1,3 +1,4 @@
+using _1_EF_DbLibrary;
 using EF6_0302;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +16,7 @@ namespace EF6_0302
     public class Program
     {
         private static IConfigurationRoot _configuration;
-        //private static DbContextOptionsBuilder<InventoryDbContext> _optionsBuilder;
+        private static DbContextOptionsBuilder<Inventory_DbContext> _optionsBuilder;
 
         static void Main(string[] args)
         {
@@ -27,8 +28,9 @@ namespace EF6_0302
         static void BuildOptions()
         {
             _configuration = ConfigurationBuilderSingleton.ConfigurationRoot;
-            //_optionsBuilder = new DbContextOptionsBuilder<InventoryDbContext>();
-            //_optionsBuilder.UseSqlServer(_configuration.GetConnectionString("InventoryManager"));
+            _optionsBuilder = new DbContextOptionsBuilder<Inventory_DbContext>();
+
+            _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("InventoryManager"));
         }
 
         /*static void EnsureItems()
