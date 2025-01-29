@@ -8,6 +8,7 @@ namespace _1_EF_DbLibrary
 {
     public class Inventory_DbContext : DbContext
     {
+        private static IConfigurationRoot _configuration;
         public DbSet<Item> Items { get; set; }
         
         public Inventory_DbContext() { } //For Scaffolding.
@@ -23,9 +24,23 @@ namespace _1_EF_DbLibrary
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
+            {   /*
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source='RAKIB-PC\\MSSQLSERVER01';Initial Catalog='InventoryManagerDb'; Trusted_Connection='True'");
+                */
+
+                /*
+                _configuration = ConfigurationBuilderSingleton.ConfigurationRoot;
+                _optionsBuilder = new DbContextOptionsBuilder<Inventory_DbContext>();
+
+                _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("InventoryManager"));
+                */
+
+                var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional:true,reloadOnChange:true );
+                _configuration = builder.Build();
+                var cnstr = _configuration.GetConnectionString("InventoryManager");
+                optionsBuilder.UseSqlServer(cnstr);
+            
             }
         }
     }
