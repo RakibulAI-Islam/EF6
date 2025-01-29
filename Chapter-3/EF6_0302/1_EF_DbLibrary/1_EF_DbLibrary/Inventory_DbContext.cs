@@ -1,6 +1,8 @@
 ﻿
 using Inventory_Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace _1_EF_DbLibrary
 {
