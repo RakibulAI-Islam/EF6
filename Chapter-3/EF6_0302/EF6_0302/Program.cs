@@ -1,5 +1,8 @@
+
 using _1_EF_DbLibrary;
+using Inventory_Models;
 using EF6_0302;
+
 using Microsoft.EntityFrameworkCore;
 
 /*
@@ -20,9 +23,10 @@ namespace EF6_0302
 
         static void Main(string[] args)
         {
+            
             BuildOptions();
-            //EnsureItems();
-            //ListInventory();
+            EnsureItems();
+            ListInventory();
         }
 
         static void BuildOptions()
@@ -33,41 +37,40 @@ namespace EF6_0302
             _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("InventoryManager"));
         }
 
-        /*static void EnsureItems()
+        static void EnsureItems()
         {
             EnsureItem("Batman Begins");
             EnsureItem("Inception");
             EnsureItem("Remember the Titans");
             EnsureItem("Star Wars: The Empire Strikes Back");
             EnsureItem("Top Gun");
-        }*/
+        }
 
-        /*private static void EnsureItem(string name)
+        private static void EnsureItem(string name)
         {
-            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            using (var db = new Inventory_DbContext(_optionsBuilder.Options))
             {
-                //determine if item exists:
-                var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower()
-                                                            == name.ToLower());
+                //Determine if item exists:
+                var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower() == name.ToLower());
 
                 if (existingItem == null)
                 {
-                    //doesn't exist, add it.
+                    //Doesn't exist, Add it.
                     var item = new Item() { Name = name };
                     db.Items.Add(item);
                     db.SaveChanges();
                 }
             }
-        }*/
-
-        /*private static void ListInventory()
+        }
+        
+        private static void ListInventory()
         {
-            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            using (var db = new Inventory_DbContext(_optionsBuilder.Options))
             {
                 var items = db.Items.OrderBy(x => x.Name).ToList();
                 items.ForEach(x => Console.WriteLine($"New Item: {x.Name}"));
             }
-        }*/
+        }
 
     }
 }
