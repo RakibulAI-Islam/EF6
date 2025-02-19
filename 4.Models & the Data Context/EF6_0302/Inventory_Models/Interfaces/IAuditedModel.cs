@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventory_Models.Interfaces
 {
-    internal interface IAuditedModel
+    public interface IAuditedModel
     {
     }
 }
