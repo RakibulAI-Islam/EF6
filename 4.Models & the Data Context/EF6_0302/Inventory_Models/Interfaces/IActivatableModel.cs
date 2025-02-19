@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventory_Models.Interfaces
 {
-    internal interface IActivatableModel
+    public interface IActivatableModel
     {
     }
 }
