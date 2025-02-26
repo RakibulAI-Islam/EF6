@@ -4,7 +4,7 @@
 
 namespace _1_EF_DbLibrary.Migrations
 {
-    public partial class initial_setup_Create_Items_table : Migration
+    public partial class Initian_Setup_Create_Items_Table : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

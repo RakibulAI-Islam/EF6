@@ -11,8 +11,8 @@ using _1_EF_DbLibrary;
 namespace _1_EF_DbLibrary.Migrations
 {
     [DbContext(typeof(Inventory_DbContext))]
-    [Migration("20250129095800_initial_setup_Create_Items_table")]
-    partial class initial_setup_Create_Items_table
+    [Migration("20250225092656_Initian_Setup_Create_Items_Table")]
+    partial class Initian_Setup_Create_Items_Table
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
