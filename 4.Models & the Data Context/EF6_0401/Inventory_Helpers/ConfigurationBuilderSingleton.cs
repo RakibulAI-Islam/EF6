@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System.IO;
 
 
-namespace EF6_0302
+namespace Inventory_Helpers
 {
     public sealed class ConfigurationBuilderSingleton
     {
