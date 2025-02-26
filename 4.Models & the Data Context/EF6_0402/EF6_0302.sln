@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6_0302", "EF6_0302\EF6_0302.csproj", "{E35B32E8-58F2-4604-965C-54C544A1840B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6_0402", "EF6_0302\EF6_0402.csproj", "{E35B32E8-58F2-4604-965C-54C544A1840B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_EF_DbLibrary", "1_EF_DbLibrary\1_EF_DbLibrary\1_EF_DbLibrary.csproj", "{F3CE11C7-0501-4615-9D6E-2D9621E67C4D}"
 EndProject
