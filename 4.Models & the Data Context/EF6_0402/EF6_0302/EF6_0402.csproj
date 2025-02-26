@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\1_EF_DbLibrary\1_EF_DbLibrary\1_EF_DbLibrary.csproj" />
+    <ProjectReference Include="..\Inventory_Helpers\Inventory_Helpers.csproj" />
   </ItemGroup>
 
 </Project>
