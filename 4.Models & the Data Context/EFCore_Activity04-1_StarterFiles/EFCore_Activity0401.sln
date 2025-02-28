@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_Activity0401", "EFCore_Activity0401\EFCore_Activity0401.csproj", "{62D3D73B-A4AB-469D-87C0-8B1E6E465A1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryModels", "InventoryModels\InventoryModels.csproj", "{9CA6F911-98DA-430A-9905-14897EEFE69A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory_Models", "InventoryModels\Inventory_Models.csproj", "{9CA6F911-98DA-430A-9905-14897EEFE69A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_DBLibrary", "EFCore_DBLibrary\EFCore_DBLibrary.csproj", "{F743A1A2-261B-4C6F-98CD-BD9761B2D528}"
 EndProject
