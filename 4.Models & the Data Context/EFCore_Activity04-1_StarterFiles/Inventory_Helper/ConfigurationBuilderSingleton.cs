@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFCore_Activity0401
+namespace Inventiry_Helper
 {
     public sealed class ConfigurationBuilderSingleton
     {
