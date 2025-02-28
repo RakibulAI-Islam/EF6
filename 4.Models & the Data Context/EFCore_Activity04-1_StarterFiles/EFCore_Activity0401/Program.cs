@@ -1,5 +1,6 @@
 ﻿using EFCore_DBLibrary;
 using InventoryModels;
+using Inventiry_Helper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
