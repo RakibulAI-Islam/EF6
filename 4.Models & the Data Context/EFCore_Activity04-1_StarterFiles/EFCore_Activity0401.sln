@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_Activity0401", "EFCore_Activity0401\EFCore_Activity0401.csproj", "{62D3D73B-A4AB-469D-87C0-8B1E6E465A1B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryModels", "InventoryModels\InventoryModels.csproj", "{9CA6F911-98DA-430A-9905-14897EEFE69A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_DBLibrary", "EFCore_DBLibrary\EFCore_DBLibrary.csproj", "{F743A1A2-261B-4C6F-98CD-BD9761B2D528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory_Helper", "Inventory_Helper\Inventory_Helper.csproj", "{30DF616C-6691-4E9A-AFA2-CDB94B771DC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F743A1A2-261B-4C6F-98CD-BD9761B2D528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F743A1A2-261B-4C6F-98CD-BD9761B2D528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F743A1A2-261B-4C6F-98CD-BD9761B2D528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30DF616C-6691-4E9A-AFA2-CDB94B771DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30DF616C-6691-4E9A-AFA2-CDB94B771DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30DF616C-6691-4E9A-AFA2-CDB94B771DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30DF616C-6691-4E9A-AFA2-CDB94B771DC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
