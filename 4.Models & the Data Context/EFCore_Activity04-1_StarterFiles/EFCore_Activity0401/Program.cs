@@ -16,6 +16,7 @@ namespace EFCore_Activity0401
         static void Main(string[] args)
         {
             BuildOptions();
+            DeleteAllItems();
             EnsureItems();
             ListInventory();
         }
@@ -25,6 +26,16 @@ namespace EFCore_Activity0401
             _configuration = ConfigurationBuilderSingleton.ConfigurationRoot;
             _optionsBuilder = new DbContextOptionsBuilder<InventoryDbContext>();
             _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("InventoryManager"));
+        }
+
+        private static void DeleteAllItems()
+        {
+            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            {
+                var items = db.Items.ToList();
+                db.Items.RemoveRange(items);
+                db.SaveChanges();
+            }
         }
 
         static void EnsureItems()
