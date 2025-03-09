@@ -16,6 +16,7 @@ namespace EFCore_Activity0402
         static void Main(string[] args)
         {
             BuildOptions();
+            DeleteAllItems();
             EnsureItems();
             ListInventory();
         }
@@ -51,6 +52,16 @@ namespace EFCore_Activity0402
                     db.Items.Add(item);
                     db.SaveChanges();
                 }
+            }
+        }
+
+        private static void DeleteAllItems()
+        {
+            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            {
+                var items = db.Items.ToList();
+                db.Items.RemoveRange(items);
+                db.SaveChanges();
             }
         }
 
