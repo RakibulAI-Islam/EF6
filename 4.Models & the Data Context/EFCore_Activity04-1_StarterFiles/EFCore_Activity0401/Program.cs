@@ -69,22 +69,24 @@ namespace EFCore_Activity0401
             EnsureItem("Top Gun");
         }
 
-        private static void EnsureItem(string name)
+        private static void EnsureItem(string name, string description, string notes)
         {
             Random r = new Random();
             
             using (var db = new Inventory_DbContext(_optionsBuilder.Options))
             {
-                //Determine, if item exists:
+                //Determine, if Item exists:
                 var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower() == name.ToLower());
 
                 if (existingItem == null)
                 {
-                   //Doesn't exist, add it.
+                   //Doesn't exist, Add it.
                     var item = new Item() { Name = name,
                                             CreatedByUserId = _loggedInUserId,
                                              IsActive = true,
-                                             Quantity = r.Next()
+                                             Quantity = r.Next(),
+                                             Description = description,
+                                             Notes = notes
                                           };
                     
                     db.Items.Add(item);
