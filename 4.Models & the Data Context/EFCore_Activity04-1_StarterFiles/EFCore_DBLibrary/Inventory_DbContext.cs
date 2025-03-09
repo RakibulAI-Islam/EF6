@@ -6,17 +6,17 @@ using System;
 
 namespace EFCore_DBLibrary
 {
-    public class InventoryDbContext : DbContext
+    public class Inventory_DbContext : DbContext
     {
         private static IConfigurationRoot _configuration;
 
         public DbSet<Item> Items { get; set; }
 
         //Add a default constructor if scaffolding is needed
-        public InventoryDbContext() { }
+        public Inventory_DbContext() { }
 
         //Add the complex constructor for allowing Dependency Injection
-        public InventoryDbContext(DbContextOptions options)
+        public Inventory_DbContext(DbContextOptions options)
             : base(options)
         {
             //intentionally empty. 

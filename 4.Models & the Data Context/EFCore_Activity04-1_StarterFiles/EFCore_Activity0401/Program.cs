@@ -11,7 +11,7 @@ namespace EFCore_Activity0401
     public class Program
     {
         private static IConfigurationRoot _configuration;
-        private static DbContextOptionsBuilder<InventoryDbContext> _optionsBuilder;
+        private static DbContextOptionsBuilder<Inventory_DbContext> _optionsBuilder;
 
         static void Main(string[] args)
         {
@@ -24,13 +24,13 @@ namespace EFCore_Activity0401
         static void BuildOptions()
         {
             _configuration = ConfigurationBuilderSingleton.ConfigurationRoot;
-            _optionsBuilder = new DbContextOptionsBuilder<InventoryDbContext>();
+            _optionsBuilder = new DbContextOptionsBuilder<Inventory_DbContext>();
             _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("InventoryManager"));
         }
 
         private static void DeleteAllItems()
         {
-            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            using (var db = new Inventory_DbContext(_optionsBuilder.Options))
             {
                 var items = db.Items.ToList();
                 db.Items.RemoveRange(items);
@@ -49,7 +49,7 @@ namespace EFCore_Activity0401
 
         private static void EnsureItem(string name)
         {
-            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            using (var db = new Inventory_DbContext(_optionsBuilder.Options))
             {
                 //determine if item exists:
                 var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower()
@@ -67,7 +67,7 @@ namespace EFCore_Activity0401
 
         private static void ListInventory()
         {
-            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            using (var db = new Inventory_DbContext(_optionsBuilder.Options))
             {
                 var items = db.Items.OrderBy(x => x.Name).ToList();
                 items.ForEach(x => Console.WriteLine($"New Item: {x.Name}"));

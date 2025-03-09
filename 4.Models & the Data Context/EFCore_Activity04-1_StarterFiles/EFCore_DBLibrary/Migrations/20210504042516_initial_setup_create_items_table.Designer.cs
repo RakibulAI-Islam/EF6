@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCore_DBLibrary.Migrations
 {
-    [DbContext(typeof(InventoryDbContext))]
+    [DbContext(typeof(Inventory_DbContext))]
     [Migration("20210504042516_initial_setup_create_items_table")]
     partial class initial_setup_create_items_table
     {

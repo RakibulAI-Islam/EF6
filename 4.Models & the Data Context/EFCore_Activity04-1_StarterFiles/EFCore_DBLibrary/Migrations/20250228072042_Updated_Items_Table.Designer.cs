@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCore_DBLibrary.Migrations
 {
-    [DbContext(typeof(InventoryDbContext))]
+    [DbContext(typeof(Inventory_DbContext))]
     [Migration("20250228072042_Updated_Items_Table")]
     partial class Updated_Items_Table
     {

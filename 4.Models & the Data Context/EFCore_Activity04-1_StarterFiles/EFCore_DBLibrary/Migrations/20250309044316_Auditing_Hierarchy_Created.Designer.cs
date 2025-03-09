@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCore_DBLibrary.Migrations
 {
-    [DbContext(typeof(InventoryDbContext))]
+    [DbContext(typeof(Inventory_DbContext))]
     [Migration("20250309044316_Auditing_Hierarchy_Created")]
     partial class Auditing_Hierarchy_Created
     {
