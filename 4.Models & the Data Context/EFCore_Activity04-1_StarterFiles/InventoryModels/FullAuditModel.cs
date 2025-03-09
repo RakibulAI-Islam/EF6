@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventory_Models
 {
-    class FullAuditModel
+    public abstract class FullAuditModel
     {
     }
 }
