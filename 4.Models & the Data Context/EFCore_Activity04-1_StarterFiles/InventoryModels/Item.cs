@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Inventory_Models;
+using System;
 
 namespace InventoryModels
 {
-    public class Item
+    public class Item : FullAuditModel
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
