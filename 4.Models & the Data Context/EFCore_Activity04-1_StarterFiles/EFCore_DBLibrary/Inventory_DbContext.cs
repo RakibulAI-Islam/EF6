@@ -3,12 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using System;
+using Inventory_Models;
 
 namespace EFCore_DBLibrary
 {
     public class Inventory_DbContext : DbContext
     {
         private static IConfigurationRoot _configuration;
+        //private static IConfigurationRoot _configuration;
+        private const string _systemUserId = "2fd28110-93d0-427d-9207-d55dbca680fa";
 
         public DbSet<Item> Items { get; set; }
 
@@ -40,10 +43,34 @@ namespace EFCore_DBLibrary
         {
             var tracker = ChangeTracker;
 
-            foreach ( var entry in tracker.Entries())
+            foreach (var entry in tracker.Entries())
             {
-                System.Diagnostics.Debug.WriteLine($"{entry.Entity} has state {entry.State}.");
+                if (entry.Entity is FullAuditModel)
+                {
+                    var referenceEntity = entry.Entity as FullAuditModel;
+                    switch (entry.State)
+                    {
+                        case EntityState.Added:
+                            referenceEntity.CreatedDate = DateTime.Now;
+                            if (string.IsNullOrWhiteSpace(referenceEntity.CreatedByUserId))
+                            {
+                                referenceEntity.CreatedByUserId = _systemUserId;
+                            }
+                            break;
+                        case EntityState.Deleted:
+                        case EntityState.Modified:
+                            referenceEntity.LastModifiedDate = DateTime.Now;
+                            if (string.IsNullOrWhiteSpace(referenceEntity.LastModifiedUserId))
+                            {
+                                referenceEntity.LastModifiedUserId = _systemUserId;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
+
             return base.SaveChanges();
         }
 
