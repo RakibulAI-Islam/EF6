@@ -35,5 +35,18 @@ namespace EFCore_DBLibrary
                 optionsBuilder.UseSqlServer(cnstr);
             }
         }
+
+        public override int SaveChanges()
+        {
+            var tracker = ChangeTracker;
+            
+            foreach ( var entry in tracker.Entries())
+            {
+                System.Diagnostics.Debug.WriteLine($"{entry.Entity} has state {entry.State}.");
+            }
+
+
+            return base.SaveChanges();
+        }
     }
 }
