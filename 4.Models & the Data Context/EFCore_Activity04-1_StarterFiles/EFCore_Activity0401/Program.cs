@@ -62,11 +62,11 @@ namespace EFCore_Activity0401
 
         static void EnsureItems()
         {
-            EnsureItem("Batman Begins");
-            EnsureItem("Inception");
-            EnsureItem("Remember the Titans");
-            EnsureItem("Star Wars: The Empire Strikes Back");
-            EnsureItem("Top Gun");
+            EnsureItem("Batman Begins", "You either die the hero or live long enough to see yourself become the villain", "Christian Bale, Katie Holmes");
+            EnsureItem("Inception", "You mustn't be afraid to dream a little bigger, darling", "Leonardo DiCaprio, Tom Hardy, Joseph Gordon-Levitt");
+            EnsureItem("Remember the Titans", "Left Side, Strong Side", "Denzell Washington, Will Patton");
+            EnsureItem("Star Wars: The Empire Strikes Back", "He will join us or die, master", "Harrison Ford, Carrie Fisher, Mark Hamill");
+            EnsureItem("Top Gun", "I feel the need, the need for speed!", "Tom Cruise, Anthony Edwards, Val Kilmer");
         }
 
         private static void EnsureItem(string name, string description, string notes)
