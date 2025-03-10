@@ -41,13 +41,12 @@ namespace EFCore_Activity0402
         {
             using (var db = new InventoryDbContext(_optionsBuilder.Options))
             {
-                //determine if item exists:
-                var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower()
-                                                            == name.ToLower());
+                //Determine, If item exists :
+                var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower() == name.ToLower());
 
                 if (existingItem == null)
                 {
-                    //doesn't exist, add it.
+                    //Doesn't exist, Add it.
                     var item = new Item() { Name = name };
                     db.Items.Add(item);
                     db.SaveChanges();
