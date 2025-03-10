@@ -36,17 +36,17 @@ namespace EFCore_DBLibrary
             }
         }
 
-        //public override int SaveChanges()
-        //{
-        //    var tracker = ChangeTracker;
-            
-        //    foreach ( var entry in tracker.Entries())
-        //    {
-        //        System.Diagnostics.Debug.WriteLine($"{entry.Entity} has state {entry.State}.");
-        //    }
+        public override int SaveChanges()
+        {
+            var tracker = ChangeTracker;
+
+            foreach (var entry in tracker.Entries())
+            {
+                System.Diagnostics.Debug.WriteLine($"{entry.Entity} has state {entry.State}.");
+            }
 
 
-        //    return base.SaveChanges();
-        //}
+            return base.SaveChanges();
+        }
     }
 }
