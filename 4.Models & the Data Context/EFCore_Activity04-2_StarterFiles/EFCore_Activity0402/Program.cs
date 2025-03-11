@@ -21,6 +21,7 @@ namespace EFCore_Activity0402
             BuildOptions();
             DeleteAllItems();
             EnsureItems();
+            UpdateItems();
             ListInventory();
         }
 
@@ -68,7 +69,24 @@ namespace EFCore_Activity0402
             using (var db = new InventoryDbContext(_optionsBuilder.Options))
             {
                 var items = db.Items.ToList();
+                
                 db.Items.RemoveRange(items);
+                db.SaveChanges();
+            }
+        }
+
+        private static void UpdateItems()
+        {
+            using (var db = new InventoryDbContext(_optionsBuilder.Options))
+            {
+                var items = db.Items.ToList();
+                
+                foreach (var item in items)
+                {
+                    item.CurrentOrFinalPrice = 9.99M;
+                }
+                
+                db.Items.UpdateRange(items);
                 db.SaveChanges();
             }
         }
