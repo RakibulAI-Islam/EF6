@@ -47,6 +47,7 @@ namespace EFCore_DBLibrary
                 if (entry.Entity is FullAuditModel)
                 {
                     var referenceEntity = entry.Entity as FullAuditModel;
+                    
                     switch (entry.State)
                     {
                         case EntityState.Added:
