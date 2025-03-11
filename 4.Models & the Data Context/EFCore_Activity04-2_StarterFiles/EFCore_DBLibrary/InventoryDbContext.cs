@@ -14,10 +14,10 @@ namespace EFCore_DBLibrary
 
         public DbSet<Item> Items { get; set; }
 
-        //Add a default constructor if scaffolding is needed
+        //Add a default constructor, If scaffolding is needed.
         public InventoryDbContext() { }
 
-        //Add the complex constructor for allowing Dependency Injection
+        //Add the complex constructor for allowing Dependency Injection.
         public InventoryDbContext(DbContextOptions options)
             : base(options)
         {
