@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryModels
 {
-    class InventoryModelConstants
+    public class InventoryModelConstants
     {
     }
 }
