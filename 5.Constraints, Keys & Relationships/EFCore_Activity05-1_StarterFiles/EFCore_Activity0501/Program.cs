@@ -45,22 +45,22 @@ namespace EFCore_Activity0501
             Random r = new Random();
             using (var db = new InventoryDbContext(_optionsBuilder.Options))
             {
-                //determine if item exists:
-                var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower()
-                                                            == name.ToLower());
+                //Determine, if item exists:
+                var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower() == name.ToLower());
 
                 if (existingItem == null)
                 {
-                    //doesn't exist, add it.
+                    //doesN't exist, Add it.
                     var item = new Item()
                     {
                         Name = name,
                         CreatedByUserId = _loggedInUserId,
                         IsActive = true,
-                        Quantity = r.Next(),
+                        Quantity = r.Next(1, 1000),
                         Description = description,
                         Notes = notes
                     };
+                    
                     db.Items.Add(item);
                     db.SaveChanges();
                 }
