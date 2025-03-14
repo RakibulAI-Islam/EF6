@@ -8,6 +8,7 @@ namespace InventoryModels
 {
     public class Item : FullAuditModel
     {
+        [Required]
         [StringLength(InventoryModelsConstants.MAX_NAME_LENGTH)]
         public string Name { get; set; }
 

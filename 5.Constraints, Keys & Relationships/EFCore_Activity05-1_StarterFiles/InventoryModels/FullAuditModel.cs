@@ -6,6 +6,7 @@ namespace InventoryModels
 {
     public abstract class FullAuditModel : IIdentityModel, IAuditedModel, IActivatableModel
     {
+        [Key]
         public int Id { get; set; }
 
         [StringLength(InventoryModelsConstants.MAX_USERID_LENGTH)]
