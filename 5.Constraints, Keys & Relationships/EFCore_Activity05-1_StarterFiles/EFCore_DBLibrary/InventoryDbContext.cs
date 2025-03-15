@@ -19,8 +19,7 @@ namespace EFCore_DBLibrary
         public InventoryDbContext() { }
 
         //Add the complex constructor for allowing Dependency Injection
-        public InventoryDbContext(DbContextOptions options)
-            : base(options)
+        public InventoryDbContext(DbContextOptions options): base(options)
         {
             //intentionally empty. 
         }
