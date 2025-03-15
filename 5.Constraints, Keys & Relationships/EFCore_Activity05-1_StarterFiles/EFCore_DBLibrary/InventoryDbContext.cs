@@ -12,6 +12,8 @@ namespace EFCore_DBLibrary
         private const string _systemUserId = "2fd28110-93d0-427d-9207-d55dbca680fa";
 
         public DbSet<Item> Items { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
 
         //Add a default constructor if scaffolding is needed
         public InventoryDbContext() { }
