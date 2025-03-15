@@ -12,6 +12,7 @@ namespace EFCore_Activity0501
     {
         private static IConfigurationRoot _configuration;
         private static DbContextOptionsBuilder<InventoryDbContext> _optionsBuilder;
+        
         private const string _systemUserId = "2fd28110-93d0-427d-9207-d55dbca680fa";
         private const string _loggedInUserId = "e2eb8989-a81a-4151-8e86-eb95a7961da2";
 
