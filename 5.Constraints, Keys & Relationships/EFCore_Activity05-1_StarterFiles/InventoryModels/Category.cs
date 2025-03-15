@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryModels
 {
-    class Category
+    public class Category
     {
     }
 }
