@@ -11,7 +11,11 @@ namespace InventoryModels
     {
         [StringLength(InventoryModelsConstants.MAX_NAME_LENGTH)]
         public string Name { get; set; }
-        
+
+        /*One to Many - Relationship.*/
         public virtual List<Item> Items { get; set; } = new List<Item>();
+
+        /*One to one - Relationship.*/
+        public virtual CategoryDetail CategoryDetail { get; set; }
     }
 }

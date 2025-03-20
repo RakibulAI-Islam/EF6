@@ -22,6 +22,8 @@ namespace InventoryModels
         [Required]
         [StringLength(InventoryModelsConstants.MAX_COLORNAME_LENGTH)]
         public string ColorName { get; set; }
+
+        /*One to one - Relationship.*/
         public virtual Category Category { get; set; }
     }
 }
