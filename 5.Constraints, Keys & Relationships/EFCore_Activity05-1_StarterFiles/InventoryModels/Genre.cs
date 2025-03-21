@@ -12,5 +12,8 @@ namespace InventoryModels
         [Required]
         [StringLength(InventoryModelsConstants.MAX_NAME_LENGTH)]
         public string Name { get; set; }
+
+        /*Many to-Many Relationship.*/
+        public virtual List<ItemGenre> GenreItems { get; set; } = new List<ItemGenre>();
     }
 }
