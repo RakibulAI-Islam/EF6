@@ -16,6 +16,7 @@ namespace InventoryModels
         [StringLength(InventoryModelsConstants.MAX_PLAYERDESCRIPTION_LENGTH)]
         public string Description { get; set; }
 
+        /*Many to-Many Relationship.*/
         public virtual List<Item> Items { get; set; } = new List<Item>();
     }
 }
