@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using System;
+using System.Collections.Generic;
 
 namespace EFCore_DBLibrary
 {
@@ -37,6 +38,26 @@ namespace EFCore_DBLibrary
                 var cnstr = _configuration.GetConnectionString("InventoryManager");
                 optionsBuilder.UseSqlServer(cnstr);
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Item>()
+                        .HasMany(x => x.Players)
+                        .WithMany(p => p.Items)
+                        .UsingEntity<Dictionary<string, object>>(
+                            "ItemPlayers",
+                            ip => ip.HasOne<Player>()
+                                    .WithMany()
+                                    .HasForeignKey("PlayerId")
+                                    .HasConstraintName("FK_ItemPlayer_Players_PlayerId")
+                                    .OnDelete(DeleteBehavior.Cascade),
+                            ip => ip.HasOne<Item>()
+                                    .WithMany()
+                                    .HasForeignKey("ItemId")
+                                    .HasConstraintName("FK_PlayerItem_Items_ItemId")
+                                    .OnDelete(DeleteBehavior.ClientCascade)
+                        );
         }
 
         public override int SaveChanges()
