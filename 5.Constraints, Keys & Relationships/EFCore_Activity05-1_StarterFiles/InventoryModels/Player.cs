@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryModels
 {
-    public class Player
+    public class Player : FullAuditModel
     {
     }
 }
