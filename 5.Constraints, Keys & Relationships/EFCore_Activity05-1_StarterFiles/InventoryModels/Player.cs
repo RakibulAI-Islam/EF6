@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryModels
 {
-    internal class Player
+    public class Player
     {
     }
 }
