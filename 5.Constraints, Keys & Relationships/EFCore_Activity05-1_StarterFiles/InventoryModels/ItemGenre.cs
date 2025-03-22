@@ -1,4 +1,5 @@
 ﻿using InventoryModels.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace InventoryModels
 {
     [Table("ItemGenres")]
+    [Index(nameof(ItemId), nameof(GenreId), IsUnique = true)]
     public class ItemGenre : IIdentityModel
     {
         public int Id { get; set; }
