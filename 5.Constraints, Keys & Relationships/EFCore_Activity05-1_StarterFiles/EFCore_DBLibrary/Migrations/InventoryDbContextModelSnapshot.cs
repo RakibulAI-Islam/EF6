@@ -56,7 +56,7 @@ namespace EFCore_DBLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("InventoryModels.CategoryDetail", b =>
@@ -76,7 +76,7 @@ namespace EFCore_DBLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CategoryDetails");
+                    b.ToTable("CategoryDetails", (string)null);
                 });
 
             modelBuilder.Entity("InventoryModels.Genre", b =>
@@ -114,7 +114,7 @@ namespace EFCore_DBLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("InventoryModels.Item", b =>
@@ -183,7 +183,7 @@ namespace EFCore_DBLibrary.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Items");
+                    b.ToTable("Items", (string)null);
                 });
 
             modelBuilder.Entity("InventoryModels.Player", b =>
@@ -225,7 +225,7 @@ namespace EFCore_DBLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Player");
+                    b.ToTable("Player", (string)null);
                 });
 
             modelBuilder.Entity("ItemPlayers", b =>
@@ -240,7 +240,7 @@ namespace EFCore_DBLibrary.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.ToTable("ItemPlayers");
+                    b.ToTable("ItemPlayers", (string)null);
                 });
 
             modelBuilder.Entity("InventoryModels.CategoryDetail", b =>
