@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35913.81 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore_Actitvity0601", "EFCore_Actitvity0601\EFCore_Actitvity0601.csproj", "{CFE96529-D375-4918-923C-B1238B0A8F16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryModels", "InventoryModels\InventoryModels.csproj", "{40F2EBCB-679A-84DC-4F21-563B8AAC85FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CFE96529-D375-4918-923C-B1238B0A8F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFE96529-D375-4918-923C-B1238B0A8F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFE96529-D375-4918-923C-B1238B0A8F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F2EBCB-679A-84DC-4F21-563B8AAC85FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F2EBCB-679A-84DC-4F21-563B8AAC85FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F2EBCB-679A-84DC-4F21-563B8AAC85FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F2EBCB-679A-84DC-4F21-563B8AAC85FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
