@@ -14,5 +14,6 @@ namespace EFCore_Actitvity0601.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
     }
 }
