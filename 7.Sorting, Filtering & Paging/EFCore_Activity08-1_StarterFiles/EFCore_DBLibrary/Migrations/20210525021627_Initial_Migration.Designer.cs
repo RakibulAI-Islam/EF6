@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCore_DBLibrary.Migrations
 {
-    [DbContext(typeof(AdventureWorksContext))]
+    [DbContext(typeof(AdventureWorksContext_2022))]
     [Migration("20210525021627_Initial_Migration")]
     partial class Initial_Migration
     {

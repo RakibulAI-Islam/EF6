@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCore_DBLibrary.Migrations
 {
-    [DbContext(typeof(AdventureWorksContext))]
+    [DbContext(typeof(AdventureWorksContext_2022))]
     partial class AdventureWorksContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

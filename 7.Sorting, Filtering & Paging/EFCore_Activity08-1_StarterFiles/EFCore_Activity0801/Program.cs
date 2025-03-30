@@ -15,6 +15,11 @@ namespace EFCore_Activity0801
         static void Main(string[] args)
         {
             BuildOptions();
+            
+            Console.WriteLine("List People Then Order and Take");
+            ListPeopleThenOrderAndTake();
+            Console.WriteLine("Query People, order, then list and take");
+            QueryPeopleOrderedToListAndTake();
         }
 
         static void BuildOptions()
@@ -22,6 +27,32 @@ namespace EFCore_Activity0801
             _configuration = ConfigurationBuilderSingleton.ConfigurationRoot;
             _optionsBuilder = new DbContextOptionsBuilder<AdventureWorksContext_2022>();
             _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("AdventureWorks_2022"));
+        }
+
+        private static void ListPeopleThenOrderAndTake()
+        {
+            using (var db = new AdventureWorksContext_2022(_optionsBuilder.Options))
+            {
+                var people = db.People.AsNoTracking().ToList().OrderByDescending(x => x.LastName);
+                foreach (var person in people.Take(10))
+                {
+                    Console.WriteLine($"{person.FirstName} {person.LastName}");
+                }
+            }
+        }
+
+        private static void QueryPeopleOrderedToListAndTake()
+        {
+            using (var db = new AdventureWorksContext_2022(_optionsBuilder.Options))
+            {
+                var query = db.People.AsNoTracking().OrderByDescending(x => x.LastName);
+                var result = query.Take(10);
+
+                foreach (var person in result)
+                {
+                    Console.WriteLine($"{person.FirstName} {person.LastName}");
+                }
+            }
         }
     }
 }
