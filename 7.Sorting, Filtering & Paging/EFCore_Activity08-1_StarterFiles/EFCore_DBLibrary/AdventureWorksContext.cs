@@ -6,14 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace EFCore_DBLibrary
 {
-    public partial class AdventureWorksContext : DbContext
+    public partial class AdventureWorksContext_2022 : DbContext
     {
-        public AdventureWorksContext()
+        public AdventureWorksContext_2022()
         {
         }
 
-        public AdventureWorksContext(DbContextOptions<AdventureWorksContext> options)
-            : base(options)
+        public AdventureWorksContext_2022(DbContextOptions<AdventureWorksContext_2022> options) : base(options)
         {
         }
 
