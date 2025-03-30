@@ -33,7 +33,7 @@ namespace EFCore_Activity0801
         {
             using (var db = new AdventureWorksContext_2022(_optionsBuilder.Options))
             {
-                var people = db.People.AsNoTracking().ToList().OrderByDescending(x => x.LastName);
+                var people = db.People.ToList().OrderByDescending(x => x.LastName);
                 foreach (var person in people.Take(10))
                 {
                     Console.WriteLine($"{person.FirstName} {person.LastName}");
@@ -45,7 +45,7 @@ namespace EFCore_Activity0801
         {
             using (var db = new AdventureWorksContext_2022(_optionsBuilder.Options))
             {
-                var query = db.People.AsNoTracking().OrderByDescending(x => x.LastName);
+                var query = db.People.OrderByDescending(x => x.LastName);
                 var result = query.Take(10);
 
                 foreach (var person in result)
