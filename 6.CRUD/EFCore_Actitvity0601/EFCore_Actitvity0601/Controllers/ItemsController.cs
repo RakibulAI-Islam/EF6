@@ -134,9 +134,7 @@ namespace EFCore_Actitvity0601.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items
-                .Include(i => i.Category)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var item = await _context.Items.Include(i => i.Category).FirstOrDefaultAsync(m => m.Id == id);
             if (item == null)
             {
                 return NotFound();
